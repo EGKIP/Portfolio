@@ -1,5 +1,4 @@
-import { ArrowUpRight, FileText, Github, Linkedin, Mail } from 'lucide-react'
-
+import { Github, Linkedin, Mail } from 'lucide-react'
 import type { ProfileAction } from '../../data/site'
 import { cn } from '../../lib/utils'
 
@@ -7,45 +6,29 @@ const actionIcons = {
   github: Github,
   linkedin: Linkedin,
   email: Mail,
-  resume: FileText,
 } as const
-
-function getActionProps(action: ProfileAction) {
-  if (action.external) {
-    return { rel: 'noreferrer', target: '_blank' as const }
-  }
-
-  if (action.download) {
-    return { download: true }
-  }
-
-  return {}
-}
 
 type ProfileActionLinkProps = {
   action: ProfileAction
-  emphasized?: boolean
   className?: string
 }
 
-export function ProfileActionLink({ action, emphasized = false, className }: ProfileActionLinkProps) {
+export function ProfileActionLink({ action, className }: ProfileActionLinkProps) {
   const Icon = actionIcons[action.kind]
+  const linkProps = action.external ? { target: '_blank', rel: 'noreferrer' } : {}
 
   return (
     <a
       href={action.href}
-      {...getActionProps(action)}
+      {...linkProps}
       className={cn(
-        'inline-flex items-center gap-2 py-1 text-sm transition',
-        emphasized
-          ? 'text-blue-100 hover:text-white'
-          : 'text-slate-300 hover:text-blue-100',
+        'inline-flex items-center gap-2 text-sm transition-colors duration-150',
+        'text-[var(--fg-muted)] hover:text-[var(--accent)]',
         className,
       )}
     >
-      <Icon className="h-3.5 w-3.5" />
+      <Icon className="h-4 w-4 shrink-0" />
       <span>{action.label}</span>
-      <ArrowUpRight className="h-3.5 w-3.5 opacity-70" />
     </a>
   )
 }
