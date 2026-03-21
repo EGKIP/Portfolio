@@ -1,27 +1,22 @@
 import { motion } from 'framer-motion'
 import { Container } from '../components/ui/container'
 import { ProfileActionLink } from '../components/ui/profile-action-link'
-import { navigation, profileActions, siteIdentity } from '../data/site'
+import { navigation, profileActions, profileImageSrc, siteIdentity } from '../data/site'
 
 export function HeroSection() {
   return (
     <section className="flex min-h-svh flex-col">
       <Container className="flex flex-1 flex-col">
+
         {/* nav */}
         <nav className="flex items-center justify-between py-8" aria-label="Primary">
-          <a
-            href="#top"
-            className="text-xs tracking-widest uppercase text-[var(--fg-faint)] transition-colors hover:text-[var(--fg-muted)]"
-          >
+          <a href="#top" className="text-xs tracking-widest uppercase text-[var(--fg-faint)] transition-colors hover:text-[var(--accent)]">
             EK
           </a>
-          <div className="flex items-center gap-7">
+          <div className="flex items-center gap-6 sm:gap-8">
             {navigation.map((item) => (
-              <a
-                key={item.href}
-                href={item.href}
-                className="text-xs tracking-widest uppercase text-[var(--fg-faint)] transition-colors hover:text-[var(--fg-muted)]"
-              >
+              <a key={item.href} href={item.href}
+                className="text-xs tracking-widest uppercase text-[var(--fg-faint)] transition-colors hover:text-[var(--fg-muted)]">
                 {item.label}
               </a>
             ))}
@@ -30,30 +25,51 @@ export function HeroSection() {
 
         {/* hero body */}
         <motion.div
-          className="flex flex-1 flex-col justify-center pb-20"
-          initial={{ opacity: 0, y: 24 }}
+          className="flex flex-1 items-center pb-16"
+          initial={{ opacity: 0, y: 28 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, ease: [0.25, 0.1, 0.25, 1] }}
+          transition={{ duration: 0.75, ease: [0.22, 1, 0.36, 1] }}
         >
-          <p className="mb-6 text-xs tracking-widest uppercase text-[var(--accent)]">
-            {siteIdentity.role}
-          </p>
+          <div className="grid w-full grid-cols-1 items-center gap-14 lg:grid-cols-[1fr_280px] lg:gap-16">
 
-          <h1 className="text-[clamp(3rem,10vw,7.5rem)] leading-[0.92] tracking-tight text-[var(--fg)]">
-            Emmanuel<br />
-            <span className="text-[var(--fg-muted)]">Kiprotich</span>
-          </h1>
+            {/* left: text */}
+            <div>
+              <p className="mb-5 text-xs tracking-widest uppercase text-[var(--fg-faint)]">
+                {siteIdentity.greeting}
+              </p>
 
-          <p className="mt-8 max-w-sm text-base leading-relaxed text-[var(--fg-muted)]">
-            {siteIdentity.intro}
-          </p>
+              <h1 className="text-[clamp(2.8rem,9vw,6rem)] leading-[0.9] tracking-tight">
+                <span className="block text-[var(--fg)]">Emmanuel</span>
+                <span className="block text-[var(--fg-muted)]">Kiprotich</span>
+              </h1>
 
-          <div className="mt-10 flex items-center gap-6">
-            {profileActions.map((action) => (
-              <ProfileActionLink key={action.label} action={action} />
-            ))}
+              <div className="mt-7 space-y-2 max-w-sm">
+                <p className="text-sm leading-relaxed text-[var(--fg-muted)]">{siteIdentity.bio}</p>
+                <p className="text-sm leading-relaxed text-[var(--fg-muted)]">{siteIdentity.bioExtended}</p>
+              </div>
+
+              <div className="mt-9 flex flex-wrap items-center gap-6">
+                {profileActions.map((action) => (
+                  <ProfileActionLink key={action.label} action={action} />
+                ))}
+              </div>
+            </div>
+
+            {/* right: profile image */}
+            <div className="relative mx-auto h-64 w-64 overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--bg-subtle)] lg:mx-0 lg:h-72 lg:w-72">
+              <img
+                src={profileImageSrc}
+                alt="Emmanuel Kiprotich"
+                className="h-full w-full object-cover"
+                onError={(e) => { (e.target as HTMLImageElement).style.opacity = '0' }}
+              />
+              {/* bottom fade */}
+              <div className="pointer-events-none absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-[var(--bg)] to-transparent" />
+            </div>
+
           </div>
         </motion.div>
+
       </Container>
     </section>
   )
