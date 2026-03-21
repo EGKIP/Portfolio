@@ -38,9 +38,9 @@ export function HeroSection() {
                 {siteIdentity.greeting}
               </p>
 
-              <h1 className="text-[clamp(2.8rem,9vw,6rem)] leading-[0.9] tracking-tight">
-                <span className="block text-[var(--fg)]">Emmanuel</span>
-                <span className="block text-[var(--fg-muted)]">Kiprotich</span>
+              <h1 className="text-[clamp(2rem,6vw,3.8rem)] leading-[0.92] tracking-tight">
+                <span className="block font-semibold text-[var(--accent)]">Emmanuel</span>
+                <span className="block text-[var(--fg)]">Kiprotich</span>
               </h1>
 
               <div className="mt-7 space-y-2 max-w-sm">

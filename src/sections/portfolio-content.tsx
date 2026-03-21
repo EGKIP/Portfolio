@@ -22,7 +22,7 @@ export function PortfolioContent() {
     <div>
 
       {/* ── Experience ─────────────────────────────────────────── */}
-      <section id="experience" className="border-t border-[var(--border)] py-24">
+      <section id="experience" className="py-24">
         <Container>
           <Label>Experience</Label>
           <div className="relative">
@@ -53,7 +53,7 @@ export function PortfolioContent() {
       </section>
 
       {/* ── Education ──────────────────────────────────────────── */}
-      <section id="education" className="border-t border-[var(--border)] py-24">
+      <section id="education" className="py-24">
         <Container>
           <Label>Education</Label>
           <div className="grid gap-5 sm:grid-cols-2">
@@ -87,7 +87,7 @@ export function PortfolioContent() {
       </section>
 
       {/* ── Projects ───────────────────────────────────────────── */}
-      <section id="projects" className="border-t border-[var(--border)] py-24">
+      <section id="projects" className="py-24">
         <Container>
           <Label>Projects</Label>
           <div className="grid gap-5 sm:grid-cols-2">
@@ -122,15 +122,18 @@ export function PortfolioContent() {
                     </div>
                     {project.github ? (
                       <a href={project.github} target="_blank" rel="noreferrer"
-                        className="flex shrink-0 items-center gap-1.5 text-xs text-[var(--fg-muted)] transition-colors hover:text-[var(--accent)]">
-                        <Github className="h-3.5 w-3.5" />
-                        <span>Code</span>
+                        className="flex shrink-0 items-center gap-1.5 rounded-full border border-[var(--accent)]/40 bg-[var(--accent)]/10 px-3 py-1 text-[11px] tracking-wide text-[var(--accent)] transition-colors hover:bg-[var(--accent)]/20">
+                        <Github className="h-3 w-3" />
+                        <span>View Code</span>
                       </a>
                     ) : (
-                      <span className="flex shrink-0 items-center gap-1.5 text-xs text-[var(--fg-faint)]">
-                        <Github className="h-3.5 w-3.5" />
-                        <span>Private</span>
-                      </span>
+                      <a
+                        href={`mailto:ekiprotich@uiowa.edu?subject=Code Request — ${project.title}`}
+                        className="flex shrink-0 items-center gap-1.5 rounded-full border border-[var(--accent)]/30 bg-[var(--accent)]/8 px-3 py-1 text-[11px] tracking-wide text-[var(--accent)]/70 transition-colors hover:border-[var(--accent)]/60 hover:text-[var(--accent)]"
+                      >
+                        <Github className="h-3 w-3" />
+                        <span>Request Code</span>
+                      </a>
                     )}
                   </div>
                 </div>
@@ -141,7 +144,7 @@ export function PortfolioContent() {
       </section>
 
       {/* ── Contact ────────────────────────────────────────────── */}
-      <section id="contact" className="border-t border-[var(--border)] py-24">
+      <section id="contact" className="py-24">
         <Container>
           <Label>Contact</Label>
           <p className="mb-8 max-w-md text-sm leading-relaxed text-[var(--fg-muted)]">
