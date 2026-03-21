@@ -6,8 +6,7 @@ export const siteIdentity = {
   bioExtended: 'Incoming M.S. Computer Science at the University of Iowa, Fall 2026.',
 } as const
 
-// Drop your profile image at: public/profile.jpg  (name it exactly that)
-export const profileImageSrc = '/profile.jpg'
+export const profileImageSrc = new URL('../assets/profile.jpg', import.meta.url).href
 
 // ─── Navigation ──────────────────────────────────────────────────────────────
 export const navigation = [
@@ -116,13 +115,17 @@ export const educationEntries: ReadonlyArray<EducationEntry> = [
 ]
 
 // ─── Projects ─────────────────────────────────────────────────────────────────
-// Project images: drop files in public/projects/ using the names below.
+const teachtrackImg  = new URL('../assets/teachtrack.jpg',  import.meta.url).href
+const trafficImg     = new URL('../assets/traffic.jpg',     import.meta.url).href
+const federatedImg   = new URL('../assets/federated.jpg',   import.meta.url).href
+const catalogImg     = new URL('../assets/catalog.jpg',     import.meta.url).href
+
 export type ProjectEntry = {
   title: string
   subtitle: string
   description: string
   stack: readonly string[]
-  imageSrc: string   // drop matching image in public/projects/
+  imageSrc: string
   github: string | null
   year: string
 }
@@ -134,7 +137,7 @@ export const projectEntries: ReadonlyArray<ProjectEntry> = [
     description:
       'Full-stack web application for managing student reflections and course data. Designed backend systems with Django and REST APIs, implemented role-based access control, and created efficient data models for structured storage and retrieval.',
     stack: ['Django', 'REST APIs', 'PostgreSQL'],
-    imageSrc: '/projects/teachtrack.jpg',
+    imageSrc: teachtrackImg,
     github: null,
     year: '2025',
   },
@@ -144,7 +147,7 @@ export const projectEntries: ReadonlyArray<ProjectEntry> = [
     description:
       'Simulation-based system using SUMO and OpenAI Gym to train RL agents for adaptive traffic signal optimization. Managed experiment configurations, real-world datasets, and logging to ensure reproducibility and scalability.',
     stack: ['Python', 'DRL', 'SUMO', 'OpenAI Gym'],
-    imageSrc: '/projects/traffic.jpg',
+    imageSrc: trafficImg,
     github: null,
     year: '2025',
   },
@@ -154,7 +157,7 @@ export const projectEntries: ReadonlyArray<ProjectEntry> = [
     description:
       'Distributed ML system for intrusion detection across edge devices using federated learning. Focused on non-IID data distributions, communication efficiency, and real-world cybersecurity evaluation using NSL-KDD and car-hacking datasets.',
     stack: ['Python', 'Federated Learning', 'NSL-KDD'],
-    imageSrc: '/projects/federated.jpg',
+    imageSrc: federatedImg,
     github: null,
     year: '2025',
   },
@@ -164,7 +167,7 @@ export const projectEntries: ReadonlyArray<ProjectEntry> = [
     description:
       'Data pipelines transforming 200+ unstructured academic catalogs into queryable structured datasets. Modeled complex prerequisite relationships using Neo4j graph data models for efficient academic data navigation.',
     stack: ['Python', 'Neo4j', 'ETL'],
-    imageSrc: '/projects/catalog.jpg',
+    imageSrc: catalogImg,
     github: null,
     year: '2024',
   },
