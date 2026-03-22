@@ -45,7 +45,7 @@ export function HeroSection() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
         >
-          <div className="grid w-full grid-cols-1 items-center gap-8 lg:grid-cols-[1fr_220px] lg:gap-12">
+          <div className="grid w-full grid-cols-1 items-center gap-8 lg:grid-cols-[1fr_260px] lg:gap-16">
 
             {/* left: text */}
             <div>
@@ -58,7 +58,7 @@ export function HeroSection() {
                 <span className="block font-semibold text-[var(--fg)]">Kiprotich</span>
               </h1>
 
-              <div className="mt-4 max-w-sm space-y-1.5">
+              <div className="mt-4 space-y-1.5">
                 <p className="text-sm leading-relaxed text-[var(--fg-muted)]">
                   <HighlightText text={siteIdentity.bio} />
                 </p>
@@ -73,7 +73,7 @@ export function HeroSection() {
             </div>
 
             {/* right: profile image */}
-            <div className="relative mx-auto h-48 w-48 overflow-hidden rounded-2xl bg-[var(--bg-subtle)] lg:mx-0 lg:h-52 lg:w-52">
+            <div className="relative mx-auto h-48 w-48 overflow-hidden rounded-2xl bg-[var(--bg-subtle)] lg:mx-0 lg:h-64 lg:w-64">
               <img
                 src={profileImageSrc}
                 alt="Emmanuel Kiprotich"
