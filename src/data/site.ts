@@ -55,22 +55,6 @@ export const experienceEntries: ReadonlyArray<ExperienceEntry> = [
     description:
       'Exploring privacy-preserving intrusion detection across distributed edge devices using federated learning. Evaluated models on NSL-KDD and car-hacking datasets under non-IID conditions, focusing on detection performance, communication efficiency, and distributed optimization strategies.',
   },
-  {
-    title: 'Backend Developer',
-    subtitle: 'TeachTrack Project',
-    org: 'Minnesota State University',
-    period: 'Jan 2025 – May 2025',
-    description:
-      'Developed backend services for a full-stack educational platform using Django and Django REST Framework. Designed database schemas, implemented role-based access control, and built APIs to support structured data storage and retrieval. Worked closely with the team to align system functionality with real user needs.',
-  },
-  {
-    title: 'Data Engineer',
-    subtitle: 'Course Catalog Automation',
-    org: 'Minnesota State University',
-    period: 'Aug 2024 – Dec 2024',
-    description:
-      'Built ETL pipelines to extract and structure data from 200+ academic catalogs. Designed graph-based data models using Neo4j to represent course prerequisites and relationships, enabling efficient navigation and querying of academic program data.',
-  },
 ] as const
 
 // ─── Education ────────────────────────────────────────────────────────────────
