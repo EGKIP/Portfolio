@@ -6,7 +6,7 @@ type ContainerProps = HTMLAttributes<HTMLDivElement>
 export function Container({ className, ...props }: ContainerProps) {
   return (
     <div
-      className={cn('mx-auto w-full max-w-[780px] px-6 sm:px-10', className)}
+      className={cn('mx-auto w-full max-w-5xl px-5 sm:px-8', className)}
       {...props}
     />
   )
