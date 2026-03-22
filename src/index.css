@@ -8,9 +8,8 @@
   -moz-osx-font-smoothing: grayscale;
 
   /* typography */
-  --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  --font-sans:  'Inter', ui-sans-serif, system-ui, sans-serif;
   --font-serif: 'Iowan Old Style', 'Palatino Linotype', Georgia, serif;
-  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
 
   /* palette — dark brown */
   --bg:        #0f0b08;
@@ -18,9 +17,8 @@
   --border:    rgba(255 255 255 / 0.07);
   --fg:        #f0ebe4;
   --fg-muted:  #b8aca0;
-  --fg-faint:  #7d7068;   /* lifted from #6b5f57 for legibility */
-  --accent:    #c9956a;   /* warm amber */
-  --accent-hi: #e0b48a;
+  --fg-faint:  #7d7068;
+  --accent:    #c9956a;
 }
 
 html {

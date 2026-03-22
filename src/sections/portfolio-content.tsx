@@ -1,5 +1,5 @@
 import type { ReactNode } from 'react'
-import { Github } from 'lucide-react'
+import { ExternalLink, Github } from 'lucide-react'
 import { Container } from '../components/ui/container'
 import { ProfileActionLink } from '../components/ui/profile-action-link'
 import { certEntries, educationEntries, experienceEntries, profileActions, projectEntries } from '../data/site'
@@ -154,9 +154,7 @@ export function PortfolioContent() {
                   <p className="text-sm font-semibold text-[var(--fg)] group-hover:text-[var(--accent)] transition-colors">{cert.name}</p>
                   <p className="mt-0.5 text-xs text-[var(--fg-faint)]">{cert.issuer}</p>
                 </div>
-                <svg className="h-4 w-4 shrink-0 text-[var(--fg-faint)] group-hover:text-[var(--accent)] transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                </svg>
+                <ExternalLink className="h-4 w-4 shrink-0 text-[var(--fg-faint)] group-hover:text-[var(--accent)] transition-colors" />
               </a>
             ))}
           </div>

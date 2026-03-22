@@ -59,7 +59,6 @@ export const experienceEntries: ReadonlyArray<ExperienceEntry> = [
 ] as const
 
 // ─── Education ────────────────────────────────────────────────────────────────
-// Education logos are already in src/assets/ — drop updated ones there if needed.
 const mnsuLogoSrc = new URL('../assets/mnsu-logo.svg', import.meta.url).href
 const uiowaLogoSrc = new URL('../assets/uiowa-logo.svg', import.meta.url).href
 
@@ -193,4 +192,3 @@ export const projectEntries: ReadonlyArray<ProjectEntry> = [
     year: '2024',
   },
 ]
-

@@ -3,14 +3,15 @@ import { Container } from '../components/ui/container'
 import { ProfileActionLink } from '../components/ui/profile-action-link'
 import { navigation, profileActions, profileImageSrc, siteIdentity } from '../data/site'
 
-const TECH_KEYWORDS = new Set(['Python', 'Java', 'JavaScript', 'Django', 'React', 'AWS'])
+const TECH_KEYWORDS = ['Python', 'Java', 'JavaScript', 'Django', 'React', 'AWS']
+const TECH_SET = new Set(TECH_KEYWORDS)
+const TECH_RE = new RegExp(`\\b(${TECH_KEYWORDS.join('|')})\\b`)
 
 function HighlightText({ text }: { text: string }) {
-  const parts = text.split(/\b(Python|Java|JavaScript|Django|React|AWS)\b/)
   return (
     <>
-      {parts.map((part, i) =>
-        TECH_KEYWORDS.has(part)
+      {text.split(TECH_RE).map((part, i) =>
+        TECH_SET.has(part)
           ? <strong key={i} className="font-semibold text-[var(--accent)]">{part}</strong>
           : <span key={i}>{part}</span>
       )}
