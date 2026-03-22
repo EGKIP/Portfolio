@@ -13,7 +13,6 @@ export const navigation = [
   { label: 'Experience', href: '#experience' },
   { label: 'Education',  href: '#education'  },
   { label: 'Projects',   href: '#projects'   },
-  { label: 'Contact',    href: '#contact'    },
 ] as const
 
 // ─── Profile links ────────────────────────────────────────────────────────────

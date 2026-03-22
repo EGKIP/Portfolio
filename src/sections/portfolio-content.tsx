@@ -134,20 +134,19 @@ export function PortfolioContent() {
         </Container>
       </section>
 
-      {/* ── Contact ────────────────────────────────────────────── */}
-      <section id="contact" className="py-10">
+      {/* ── Footer ─────────────────────────────────────────────── */}
+      <footer className="py-12 pb-16">
         <Container>
-          <Label>Contact</Label>
-          <p className="mb-6 max-w-md text-base leading-relaxed text-[var(--fg-muted)]">
-            Open to research collaborations, internships, and interesting conversations. Best reached by email.
-          </p>
-          <div className="flex flex-wrap items-center gap-6">
-            {profileActions.map((action) => (
-              <ProfileActionLink key={action.label} action={action} />
-            ))}
+          <div className="flex flex-wrap items-center justify-between gap-4">
+            <div className="flex items-center gap-6">
+              {profileActions.map((action) => (
+                <ProfileActionLink key={action.label} action={action} />
+              ))}
+            </div>
+            <p className="text-xs text-[var(--fg-faint)]">© {new Date().getFullYear()} Emmanuel Kiprotich</p>
           </div>
         </Container>
-      </section>
+      </footer>
 
     </div>
   )
