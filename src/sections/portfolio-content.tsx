@@ -2,7 +2,7 @@ import type { ReactNode } from 'react'
 import { Github } from 'lucide-react'
 import { Container } from '../components/ui/container'
 import { ProfileActionLink } from '../components/ui/profile-action-link'
-import { educationEntries, experienceEntries, profileActions, projectEntries } from '../data/site'
+import { certEntries, educationEntries, experienceEntries, profileActions, projectEntries } from '../data/site'
 
 function Label({ children }: { children: ReactNode }) {
   return (
@@ -129,6 +129,35 @@ export function PortfolioContent() {
                   </div>
                 </div>
               </article>
+            ))}
+          </div>
+        </Container>
+      </section>
+
+      {/* ── Certifications ─────────────────────────────────────── */}
+      <section id="certifications" className="py-10">
+        <Container>
+          <Label>Certifications</Label>
+          <div className="flex flex-col gap-3">
+            {certEntries.map((cert) => (
+              <a
+                key={cert.name}
+                href={cert.href}
+                target="_blank"
+                rel="noreferrer"
+                className="group flex items-center gap-4 rounded-xl border border-[var(--border)] bg-[var(--bg-subtle)] px-5 py-4 transition-colors hover:border-[var(--accent)]/40 hover:bg-[var(--accent)]/5"
+              >
+                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-white/90 p-1.5">
+                  <img src={cert.logoSrc} alt={cert.logoAlt} className="h-full w-full object-contain" />
+                </div>
+                <div className="flex-1 min-w-0">
+                  <p className="text-sm font-semibold text-[var(--fg)] group-hover:text-[var(--accent)] transition-colors">{cert.name}</p>
+                  <p className="mt-0.5 text-xs text-[var(--fg-faint)]">{cert.issuer}</p>
+                </div>
+                <svg className="h-4 w-4 shrink-0 text-[var(--fg-faint)] group-hover:text-[var(--accent)] transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                </svg>
+              </a>
             ))}
           </div>
         </Container>

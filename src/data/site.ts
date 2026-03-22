@@ -10,9 +10,10 @@ export const profileImageSrc = new URL('../assets/profile.jpg', import.meta.url)
 
 // ─── Navigation ──────────────────────────────────────────────────────────────
 export const navigation = [
-  { label: 'Experience', href: '#experience' },
-  { label: 'Education',  href: '#education'  },
-  { label: 'Projects',   href: '#projects'   },
+  { label: 'Experience',    href: '#experience'    },
+  { label: 'Education',     href: '#education'     },
+  { label: 'Projects',      href: '#projects'      },
+  { label: 'Certifications', href: '#certifications' },
 ] as const
 
 // ─── Profile links ────────────────────────────────────────────────────────────
@@ -94,6 +95,43 @@ export const educationEntries: ReadonlyArray<EducationEntry> = [
     coursework: [],
     logoSrc: uiowaLogoSrc,
     logoAlt: 'University of Iowa',
+  },
+]
+
+// ─── Certifications ───────────────────────────────────────────────────────────
+const awsLogoSrc      = new URL('../assets/AWSCPP.png',                                    import.meta.url).href
+const googleLogoSrc   = new URL('../assets/Google Foundations of Project Management.png',  import.meta.url).href
+const codepathLogoSrc = new URL('../assets/Codepath.png',                                  import.meta.url).href
+
+export type CertEntry = {
+  name: string
+  issuer: string
+  href: string
+  logoSrc: string
+  logoAlt: string
+}
+
+export const certEntries: ReadonlyArray<CertEntry> = [
+  {
+    name: 'AWS Certified Cloud Practitioner',
+    issuer: 'Amazon Web Services',
+    href: 'https://www.credly.com/badges/ec713c29-9499-4306-8123-dd5c72c24c67/linked_in_profile',
+    logoSrc: awsLogoSrc,
+    logoAlt: 'AWS',
+  },
+  {
+    name: 'Foundations of Project Management',
+    issuer: 'Google / Coursera',
+    href: 'https://www.coursera.org/account/accomplishments/verify/SXF5Z4TQPTF7',
+    logoSrc: googleLogoSrc,
+    logoAlt: 'Google',
+  },
+  {
+    name: 'Intermediate Technical Interview Prep',
+    issuer: 'CodePath',
+    href: 'https://www.codepath.org/',
+    logoSrc: codepathLogoSrc,
+    logoAlt: 'CodePath',
   },
 ]
 
