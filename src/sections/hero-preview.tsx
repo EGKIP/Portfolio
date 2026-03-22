@@ -24,14 +24,14 @@ export function HeroSection() {
       <Container>
 
         {/* nav */}
-        <nav className="flex items-center justify-between py-5" aria-label="Primary">
-          <a href="#top" className="text-xs font-semibold tracking-widest uppercase text-[var(--fg-muted)] transition-colors hover:text-[var(--accent)]">
+        <nav className="flex items-center justify-between gap-4 py-5" aria-label="Primary">
+          <a href="#top" className="shrink-0 text-xs font-semibold tracking-widest uppercase text-[var(--fg-muted)] transition-colors hover:text-[var(--accent)]">
             EK
           </a>
-          <div className="flex items-center gap-5 sm:gap-7">
+          <div className="flex flex-wrap items-center justify-end gap-x-4 gap-y-1.5 sm:gap-x-6">
             {navigation.map((item) => (
               <a key={item.href} href={item.href}
-                className="text-xs tracking-widest uppercase text-[var(--fg-faint)] transition-colors hover:text-[var(--fg-muted)]">
+                className="text-[10px] tracking-widest uppercase text-[var(--fg-faint)] transition-colors hover:text-[var(--fg-muted)]">
                 {item.label}
               </a>
             ))}

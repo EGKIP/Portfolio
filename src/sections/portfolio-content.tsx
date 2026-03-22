@@ -164,7 +164,7 @@ export function PortfolioContent() {
       </section>
 
       {/* ── Footer ─────────────────────────────────────────────── */}
-      <footer className="py-12 pb-16">
+      <footer className="pt-6 pb-14 border-t border-[var(--border)]">
         <Container>
           <div className="flex flex-wrap items-center justify-between gap-4">
             <div className="flex items-center gap-6">

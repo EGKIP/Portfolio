@@ -78,7 +78,7 @@ export const educationEntries: ReadonlyArray<EducationEntry> = [
     school: 'Minnesota State University, Mankato',
     degree: 'B.S. Computer Science, Minor in Mathematics',
     period: 'Aug 2022 – May 2026',
-    status: 'Attended',
+    status: 'Graduating May 2026',
     coursework: [
       'Data Structures & Algorithms', 'Operating Systems',
       'Databases & Information Security', 'Parallel Computing',
