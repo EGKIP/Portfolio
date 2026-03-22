@@ -40,20 +40,34 @@ export function HeroSection() {
 
         {/* hero body */}
         <motion.div
-          className="pt-8 pb-14"
+          className="pt-6 pb-8 lg:pb-14"
           initial={{ opacity: 0, y: 18 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
         >
-          <div className="grid w-full grid-cols-1 items-center gap-8 lg:grid-cols-[1fr_260px] lg:gap-16">
+          <div className="grid w-full grid-cols-1 items-center gap-6 lg:grid-cols-[1fr_260px] lg:gap-16">
 
-            {/* left: text */}
+            {/* profile image — shown first on mobile (order-first), right side on desktop */}
+            <div className="order-first flex justify-center lg:order-last lg:block">
+              <div className="relative h-36 w-36 overflow-hidden rounded-full bg-[var(--bg-subtle)] lg:mx-0 lg:h-64 lg:w-64 lg:rounded-2xl">
+                <img
+                  src={profileImageSrc}
+                  alt="Emmanuel Kiprotich"
+                  className="h-full w-full object-cover"
+                  onError={(e) => { (e.target as HTMLImageElement).style.opacity = '0' }}
+                />
+                {/* gradient only makes sense on the rectangular desktop version */}
+                <div className="pointer-events-none absolute inset-x-0 bottom-0 hidden h-10 bg-gradient-to-t from-[var(--bg)] to-transparent lg:block" />
+              </div>
+            </div>
+
+            {/* text */}
             <div>
               <p className="mb-3 text-[11px] tracking-[0.2em] uppercase text-[var(--fg-faint)]">
                 {siteIdentity.greeting}
               </p>
 
-              <h1 className="text-[clamp(1.4rem,3.5vw,2.2rem)] leading-[0.96] tracking-tight">
+              <h1 className="font-sans text-[clamp(1.7rem,3.5vw,2.2rem)] leading-[1.0] tracking-tight">
                 <span className="block font-bold text-[var(--accent)]">Emmanuel</span>
                 <span className="block font-semibold text-[var(--fg)]">Kiprotich</span>
               </h1>
@@ -70,17 +84,6 @@ export function HeroSection() {
                   <ProfileActionLink key={action.label} action={action} />
                 ))}
               </div>
-            </div>
-
-            {/* right: profile image */}
-            <div className="relative mx-auto h-48 w-48 overflow-hidden rounded-2xl bg-[var(--bg-subtle)] lg:mx-0 lg:h-64 lg:w-64">
-              <img
-                src={profileImageSrc}
-                alt="Emmanuel Kiprotich"
-                className="h-full w-full object-cover"
-                onError={(e) => { (e.target as HTMLImageElement).style.opacity = '0' }}
-              />
-              <div className="pointer-events-none absolute inset-x-0 bottom-0 h-10 bg-gradient-to-t from-[var(--bg)] to-transparent" />
             </div>
 
           </div>
