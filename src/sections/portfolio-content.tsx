@@ -6,7 +6,7 @@ import { educationEntries, experienceEntries, profileActions, projectEntries } f
 
 function Label({ children }: { children: ReactNode }) {
   return (
-    <p className="mb-8 text-[11px] font-semibold tracking-[0.18em] uppercase text-[var(--fg-muted)]">{children}</p>
+    <p className="mb-6 text-[11px] font-semibold tracking-[0.18em] uppercase text-[var(--fg-muted)]">{children}</p>
   )
 }
 
@@ -22,22 +22,22 @@ export function PortfolioContent() {
     <div>
 
       {/* ── Experience ─────────────────────────────────────────── */}
-      <section id="experience" className="py-16">
+      <section id="experience" className="py-10">
         <Container>
           <Label>Experience</Label>
           <div className="relative">
             <div className="absolute left-[7px] top-2 bottom-2 w-px bg-gradient-to-b from-[var(--accent)] via-[var(--accent)]/25 to-transparent" />
-            <div className="space-y-8">
+            <div className="space-y-7">
               {experienceEntries.map((entry) => (
                 <div key={entry.title} className="relative pl-8">
                   <div className="absolute left-0 top-[4px] h-3 w-3 rounded-full border-2 border-[var(--accent)] bg-[var(--bg)]" />
                   <div className="flex flex-col gap-1 sm:flex-row sm:items-start sm:justify-between sm:gap-6">
                     <div>
                       <p className="text-[11px] font-semibold tracking-widest uppercase text-[var(--accent)]">{entry.title}</p>
-                      <p className="mt-0.5 text-sm font-medium text-[var(--fg)]">{entry.subtitle}</p>
+                      <p className="mt-0.5 text-base font-medium text-[var(--fg)]">{entry.subtitle}</p>
                     </div>
                     <div className="shrink-0 sm:text-right">
-                      <p className="text-xs text-[var(--fg-muted)]">{entry.org}</p>
+                      <p className="text-sm text-[var(--fg-muted)]">{entry.org}</p>
                       <p className="mt-0.5 text-xs text-[var(--fg-faint)]">{entry.period}</p>
                     </div>
                   </div>
@@ -50,7 +50,7 @@ export function PortfolioContent() {
       </section>
 
       {/* ── Education ──────────────────────────────────────────── */}
-      <section id="education" className="py-16">
+      <section id="education" className="py-10">
         <Container>
           <Label>Education</Label>
           <div className="grid gap-4 sm:grid-cols-2">
@@ -65,7 +65,7 @@ export function PortfolioContent() {
                     <h3 className="mt-0.5 text-sm font-semibold leading-snug text-[var(--fg)]">{entry.school}</h3>
                   </div>
                 </div>
-                <p className="mt-3 text-sm font-medium text-[var(--fg-muted)]">{entry.degree}</p>
+                <p className="mt-3 text-base font-medium text-[var(--fg-muted)]">{entry.degree}</p>
                 <p className="mt-0.5 text-xs text-[var(--fg-faint)]">{entry.period}</p>
                 {entry.coursework.length > 0 && (
                   <div className="mt-4 border-t border-[var(--border)] pt-3">
@@ -84,7 +84,7 @@ export function PortfolioContent() {
       </section>
 
       {/* ── Projects ───────────────────────────────────────────── */}
-      <section id="projects" className="py-16">
+      <section id="projects" className="py-10">
         <Container>
           <Label>Projects</Label>
           <div className="grid gap-4 sm:grid-cols-2">
@@ -110,7 +110,7 @@ export function PortfolioContent() {
                     </div>
                     <span className="shrink-0 text-xs tabular-nums text-[var(--fg-faint)]">{project.year}</span>
                   </div>
-                  <p className="mt-2 flex-1 text-xs leading-relaxed text-[var(--fg-muted)]">{project.description}</p>
+                  <p className="mt-2 flex-1 text-sm leading-relaxed text-[var(--fg-muted)]">{project.description}</p>
                   <div className="mt-4 flex items-center justify-between gap-3">
                     <div className="flex flex-wrap gap-1">
                       {project.stack.map((tag) => (
@@ -135,10 +135,10 @@ export function PortfolioContent() {
       </section>
 
       {/* ── Contact ────────────────────────────────────────────── */}
-      <section id="contact" className="py-16">
+      <section id="contact" className="py-10">
         <Container>
           <Label>Contact</Label>
-          <p className="mb-6 max-w-md text-sm leading-relaxed text-[var(--fg-muted)]">
+          <p className="mb-6 max-w-md text-base leading-relaxed text-[var(--fg-muted)]">
             Open to research collaborations, internships, and interesting conversations. Best reached by email.
           </p>
           <div className="flex flex-wrap items-center gap-6">
