@@ -3,6 +3,21 @@ import { Container } from '../components/ui/container'
 import { ProfileActionLink } from '../components/ui/profile-action-link'
 import { navigation, profileActions, profileImageSrc, siteIdentity } from '../data/site'
 
+const TECH_KEYWORDS = new Set(['Python', 'Java', 'JavaScript', 'Django', 'React', 'AWS'])
+
+function HighlightText({ text }: { text: string }) {
+  const parts = text.split(/\b(Python|Java|JavaScript|Django|React|AWS)\b/)
+  return (
+    <>
+      {parts.map((part, i) =>
+        TECH_KEYWORDS.has(part)
+          ? <strong key={i} className="font-semibold text-[var(--accent)]">{part}</strong>
+          : <span key={i}>{part}</span>
+      )}
+    </>
+  )
+}
+
 export function HeroSection() {
   return (
     <section>
@@ -38,13 +53,15 @@ export function HeroSection() {
                 {siteIdentity.greeting}
               </p>
 
-              <h1 className="text-[clamp(1.7rem,4.5vw,2.8rem)] leading-[0.94] tracking-tight">
+              <h1 className="text-[clamp(1.4rem,3.5vw,2.2rem)] leading-[0.96] tracking-tight">
                 <span className="block font-bold text-[var(--accent)]">Emmanuel</span>
                 <span className="block font-semibold text-[var(--fg)]">Kiprotich</span>
               </h1>
 
-              <div className="mt-4 max-w-sm space-y-1">
-                <p className="text-base leading-relaxed text-[var(--fg-muted)]">{siteIdentity.bio}</p>
+              <div className="mt-4 max-w-sm space-y-1.5">
+                <p className="text-sm leading-relaxed text-[var(--fg-muted)]">
+                  <HighlightText text={siteIdentity.bio} />
+                </p>
                 <p className="text-sm leading-relaxed text-[var(--fg-faint)]">{siteIdentity.bioExtended}</p>
               </div>
 

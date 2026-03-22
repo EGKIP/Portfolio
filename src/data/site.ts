@@ -2,8 +2,8 @@
 export const siteIdentity = {
   greeting: 'Hello, I am',
   name: 'Emmanuel Kiprotich',
-  bio: 'CS & Math student building at the intersection of machine learning and systems.',
-  bioExtended: 'Incoming M.S. Computer Science at the University of Iowa, Fall 2026.',
+  bio: "I'm a CS & Math student and aspiring software engineer passionate about machine learning and cloud systems. I have experience in Python, Java, JavaScript, Django, React, and AWS. I'm driven to leverage software engineering and ML to solve real-world problems.",
+  bioExtended: 'Starting my MCS at the University of Iowa in Fall 2026.',
 } as const
 
 export const profileImageSrc = new URL('../assets/profile.jpg', import.meta.url).href
