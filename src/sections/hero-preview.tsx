@@ -3,7 +3,7 @@ import { Container } from '../components/ui/container'
 import { ProfileActionLink } from '../components/ui/profile-action-link'
 import { navigation, profileActions, profileImageSrc, siteIdentity } from '../data/site'
 
-const TECH_KEYWORDS = ['Python', 'Java', 'JavaScript', 'Django', 'React', 'AWS']
+const TECH_KEYWORDS = ['Machine Learning Researcher', 'Software Engineer', 'AI-powered applications']
 const TECH_SET = new Set(TECH_KEYWORDS)
 const TECH_RE = new RegExp(`\\b(${TECH_KEYWORDS.join('|')})\\b`)
 
@@ -32,7 +32,7 @@ export function HeroSection() {
           <div className="flex flex-wrap items-center justify-end gap-x-4 gap-y-1.5 sm:gap-x-6">
             {navigation.map((item) => (
               <a key={item.href} href={item.href}
-                className="text-[10px] tracking-widest uppercase text-[var(--fg-faint)] transition-colors hover:text-[var(--fg-muted)]">
+                className="rounded-sm text-[11px] tracking-widest uppercase text-[var(--fg-faint)] transition-colors hover:text-[var(--fg-muted)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--accent)]">
                 {item.label}
               </a>
             ))}
@@ -54,6 +54,7 @@ export function HeroSection() {
                 <img
                   src={profileImageSrc}
                   alt="Emmanuel Kiprotich"
+                  fetchPriority="high"
                   className="h-full w-full object-cover"
                   onError={(e) => { (e.target as HTMLImageElement).style.opacity = '0' }}
                 />
@@ -80,7 +81,7 @@ export function HeroSection() {
                 <p className="text-sm leading-relaxed text-[var(--fg-faint)]">{siteIdentity.bioExtended}</p>
               </div>
 
-              <div className="mt-6 flex flex-wrap items-center gap-5">
+              <div className="mt-6 flex flex-wrap items-center gap-x-5 gap-y-3">
                 {profileActions.map((action) => (
                   <ProfileActionLink key={action.label} action={action} />
                 ))}
