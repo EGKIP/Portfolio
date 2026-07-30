@@ -2,7 +2,7 @@
 export const siteIdentity = {
   greeting: 'Hello, I am',
   name: 'Emmanuel Kiprotich',
-  bio: 'Computer Science graduate, Machine Learning Researcher, and Software Engineer building retrieval-augmented generation systems, federated learning pipelines, deep reinforcement learning agents, and computer vision applications.',
+  bio: 'Computer Science graduate, Machine Learning Researcher, and Software Engineer building AI-powered applications, cloud-native systems, and production-ready machine learning solutions.',
   bioExtended: 'Incoming Master of Computer Science student at the University of Iowa.',
 } as const
 
@@ -208,7 +208,7 @@ export const projectEntries: ReadonlyArray<ProjectEntry> = [
     title: 'Clausly.app',
     subtitle: 'AI Contract Intelligence Platform',
     description:
-      'AI-powered contract intelligence platform that summarizes documents, extracts clauses, identifies risks, answers grounded questions, and manages deadlines through a retrieval-augmented generation pipeline.',
+      'Contract intelligence SaaS built around a RAG pipeline with PDF parsing, semantic chunking, vector retrieval, grounded document Q&A, structured clause extraction, risk classification, and deadline tracking.',
     stack: ['Next.js', 'React', 'TypeScript', 'Supabase', 'PostgreSQL', 'OpenAI', 'RAG'],
     imageSrc: clauslyImg,
     imageAlt: 'Clausly AI contract intelligence platform wordmark',
@@ -223,7 +223,7 @@ export const projectEntries: ReadonlyArray<ProjectEntry> = [
     title: 'Wrex.app',
     subtitle: 'AI Writing Intelligence Platform',
     description:
-      'Full-stack AI writing platform for authenticity scoring, grammar, voice consistency, rewriting, and rubric alignment, with secure authentication, subscriptions, rate limiting, and production deployments.',
+      'Writing intelligence SaaS with NLP workflows for authenticity scoring, voice-consistency analysis, grammatical revision, constrained rewriting, and rubric-aligned feedback, backed by JWT authentication, rate limiting, and Stripe billing.',
     stack: ['React', 'TypeScript', 'FastAPI', 'Supabase', 'PostgreSQL', 'OpenAI', 'Stripe'],
     imageSrc: wrexImg,
     imageAlt: 'Wrex AI writing intelligence platform logo',
