@@ -177,8 +177,8 @@ export const certEntries: ReadonlyArray<CertEntry> = [
 ]
 
 // ─── Projects ───────────────────────────────────────────────────────────────
-const clauslyImg = new URL('../assets/clausly-wordmark.png', import.meta.url).href
-const wrexImg = new URL('../assets/wrex-logo.png', import.meta.url).href
+const clauslyImg = new URL('../assets/clausly-wordmark.jpg', import.meta.url).href
+const wrexImg = new URL('../assets/wrex-logo.jpg', import.meta.url).href
 const alfalfaImg = new URL('../assets/usda-alfalfa.jpeg', import.meta.url).href
 const federatedImg = new URL('../assets/federated.jpg', import.meta.url).href
 const trafficImg = new URL('../assets/traffic.jpg', import.meta.url).href
