@@ -2,7 +2,7 @@
 export const siteIdentity = {
   greeting: 'Hello, I am',
   name: 'Emmanuel Kiprotich',
-  bio: 'Computer Science graduate, Machine Learning Researcher, and Software Engineer building AI-powered applications, cloud-native systems, and production-ready machine learning solutions.',
+  bio: 'Computer Science graduate, Machine Learning Researcher, and Software Engineer building retrieval-augmented generation systems, federated learning pipelines, deep reinforcement learning agents, and computer vision applications.',
   bioExtended: 'Incoming Master of Computer Science student at the University of Iowa.',
 } as const
 

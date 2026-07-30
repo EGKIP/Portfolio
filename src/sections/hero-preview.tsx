@@ -3,7 +3,14 @@ import { Container } from '../components/ui/container'
 import { ProfileActionLink } from '../components/ui/profile-action-link'
 import { navigation, profileActions, profileImageSrc, siteIdentity } from '../data/site'
 
-const TECH_KEYWORDS = ['Machine Learning Researcher', 'Software Engineer', 'AI-powered applications']
+const TECH_KEYWORDS = [
+  'Machine Learning Researcher',
+  'Software Engineer',
+  'retrieval-augmented generation',
+  'federated learning',
+  'deep reinforcement learning',
+  'computer vision',
+]
 const TECH_SET = new Set(TECH_KEYWORDS)
 const TECH_RE = new RegExp(`\\b(${TECH_KEYWORDS.join('|')})\\b`)
 

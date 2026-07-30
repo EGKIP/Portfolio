@@ -1,8 +1,9 @@
 # Emmanuel Kiprotich — Portfolio
 
 Personal portfolio for Emmanuel Kiprotich, a software engineer and machine
-learning researcher building AI-powered applications, cloud-native systems,
-and production-ready ML solutions.
+learning researcher working across retrieval-augmented generation, federated
+learning, deep reinforcement learning, computer vision, and production AI
+systems.
 
 ## Development
 
