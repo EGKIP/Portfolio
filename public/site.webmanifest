@@ -1,0 +1,9 @@
+{
+  "name": "Emmanuel Kiprotich Portfolio",
+  "short_name": "EK Portfolio",
+  "description": "Software engineering and machine learning research portfolio of Emmanuel Kiprotich.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0f0b08",
+  "theme_color": "#0f0b08"
+}

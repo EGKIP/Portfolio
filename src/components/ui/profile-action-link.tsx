@@ -1,4 +1,4 @@
-import { Github, Linkedin, Mail } from 'lucide-react'
+import { FileText, Github, Linkedin, Mail } from 'lucide-react'
 import type { ProfileAction } from '../../data/site'
 import { cn } from '../../lib/utils'
 
@@ -6,6 +6,7 @@ const actionIcons = {
   github: Github,
   linkedin: Linkedin,
   email: Mail,
+  resume: FileText,
 } as const
 
 type ProfileActionLinkProps = {
@@ -15,7 +16,7 @@ type ProfileActionLinkProps = {
 
 export function ProfileActionLink({ action, className }: ProfileActionLinkProps) {
   const Icon = actionIcons[action.kind]
-  const linkProps = action.external ? { target: '_blank', rel: 'noreferrer' } : {}
+  const linkProps = action.external ? { target: '_blank', rel: 'noopener noreferrer' } : {}
 
   return (
     <a
@@ -23,7 +24,7 @@ export function ProfileActionLink({ action, className }: ProfileActionLinkProps)
       {...linkProps}
       className={cn(
         'inline-flex items-center gap-2 text-sm transition-colors duration-150',
-        'text-[var(--fg-muted)] hover:text-[var(--accent)]',
+        'rounded-sm text-[var(--fg-muted)] hover:text-[var(--accent)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--accent)]',
         className,
       )}
     >
