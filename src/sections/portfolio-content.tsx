@@ -145,7 +145,11 @@ export function PortfolioContent() {
                             target="_blank"
                             rel="noopener noreferrer"
                             aria-label={`${link.label} for ${project.title}`}
-                            className="flex shrink-0 items-center gap-1.5 rounded-full border border-[var(--accent)]/35 bg-[var(--accent)]/10 px-3 py-1.5 text-[11px] font-medium tracking-wide text-[var(--accent)] transition-colors hover:bg-[var(--accent)]/20 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--accent)]"
+                            className={`flex shrink-0 items-center gap-1.5 rounded-full border px-3 py-1.5 text-[11px] font-medium tracking-wide transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 ${
+                              link.kind === 'live'
+                                ? 'border-sky-400/45 bg-sky-400/15 text-sky-300 hover:border-sky-300/70 hover:bg-sky-400/25 focus-visible:outline-sky-300'
+                                : 'border-[var(--accent)]/35 bg-[var(--accent)]/10 text-[var(--accent)] hover:bg-[var(--accent)]/20 focus-visible:outline-[var(--accent)]'
+                            }`}
                           >
                             <Icon className="h-3 w-3" />
                             <span>{link.label}</span>
