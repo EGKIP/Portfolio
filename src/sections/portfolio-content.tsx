@@ -18,7 +18,7 @@ const cardBg = [
 ]
 
 const statusStyles = {
-  Live: 'border-emerald-400/25 bg-emerald-400/10 text-emerald-300',
+  Live: 'border-sky-400/25 bg-sky-400/10 text-sky-300',
   Research: 'border-sky-400/25 bg-sky-400/10 text-sky-300',
   'In Development': 'border-amber-400/25 bg-amber-400/10 text-amber-300',
 } as const
@@ -117,10 +117,6 @@ export function PortfolioContent() {
                     onError={(e) => { (e.target as HTMLImageElement).style.opacity = '0' }}
                   />
                   <div className="pointer-events-none absolute inset-x-0 bottom-0 h-10 bg-gradient-to-t from-[var(--bg-subtle)] to-transparent" />
-                  <span className={`absolute right-3 top-3 rounded-full border px-2.5 py-1 text-[10px] font-semibold tracking-wider uppercase backdrop-blur-md ${statusStyles[project.status]}`}>
-                    {project.status === 'Live' && <span className="mr-1.5 inline-block h-1.5 w-1.5 rounded-full bg-emerald-300" />}
-                    {project.status}
-                  </span>
                 </div>
 
                 {/* body */}
@@ -138,23 +134,31 @@ export function PortfolioContent() {
                       <span key={tag} className="rounded border border-[var(--border)] px-2 py-0.5 text-[10px] tracking-wider uppercase text-[var(--fg-faint)]">{tag}</span>
                     ))}
                   </div>
-                  <div className="mt-5 flex flex-wrap items-center gap-2">
-                    {project.links.map((link) => {
-                      const Icon = link.kind === 'github' ? Github : link.kind === 'research' ? Microscope : ExternalLink
-                      return (
-                        <a
-                          key={link.href}
-                          href={link.href}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          aria-label={`${link.label} for ${project.title}`}
-                          className="flex shrink-0 items-center gap-1.5 rounded-full border border-[var(--accent)]/35 bg-[var(--accent)]/10 px-3 py-1.5 text-[11px] font-medium tracking-wide text-[var(--accent)] transition-colors hover:bg-[var(--accent)]/20 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--accent)]"
-                        >
-                          <Icon className="h-3 w-3" />
-                          <span>{link.label}</span>
-                        </a>
-                      )
-                    })}
+                  <div className="mt-5 flex flex-wrap items-end justify-between gap-3">
+                    <div className="flex flex-wrap items-center gap-2">
+                      {project.links.map((link) => {
+                        const Icon = link.kind === 'github' ? Github : link.kind === 'research' ? Microscope : ExternalLink
+                        return (
+                          <a
+                            key={link.href}
+                            href={link.href}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label={`${link.label} for ${project.title}`}
+                            className="flex shrink-0 items-center gap-1.5 rounded-full border border-[var(--accent)]/35 bg-[var(--accent)]/10 px-3 py-1.5 text-[11px] font-medium tracking-wide text-[var(--accent)] transition-colors hover:bg-[var(--accent)]/20 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--accent)]"
+                          >
+                            <Icon className="h-3 w-3" />
+                            <span>{link.label}</span>
+                          </a>
+                        )
+                      })}
+                    </div>
+                    <span className={`ml-auto inline-flex shrink-0 items-center rounded-full border px-2.5 py-1 text-[10px] font-semibold tracking-wider uppercase ${statusStyles[project.status]}`}>
+                      {project.status === 'Live' && (
+                        <span className="mr-1.5 h-1.5 w-1.5 animate-pulse rounded-full bg-sky-300 shadow-[0_0_8px_rgba(125,211,252,0.8)]" />
+                      )}
+                      {project.status}
+                    </span>
                   </div>
                 </div>
               </article>
